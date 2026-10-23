@@ -14,16 +14,16 @@ INSERT INTO car_models (brand, model_name, car_class, transmission, fuel_tank_ca
 
 INSERT INTO cars (model_id, license_plate, vin, manufacture_year, fuel_level, odometer_km, status) VALUES
 (1, 'А123ВС799', 'Z94CB41AAGR123456', 2022, 85, 45200, 'available'),
-(1, 'В456ОР799', 'Z94CB41AAGR654321', 2023, 40, 28100, 'available'),
+(1, 'В228ОР799', 'Z94CB41AAGR654321', 2023, 40, 28100, 'available'),
 (2, 'Е789КХ797', 'Y4K8722Z8NB000111', 2024, 90, 15430, 'in_use'),
-(3, 'М321ТС797', 'LVVDB11B9ND222333', 2024, 15, 19800, 'maintenance'),
+(3, 'В004КО797', 'LVVDB11B9ND222333', 2024, 15, 19800, 'maintenance'),
 (4, 'О777ОО777', 'WBA5F310X0F999888', 2021, 70, 62000, 'available');
 
 INSERT INTO tariffs (name, price_per_min, parking_price_per_min, included_km, is_active) VALUES
 ('Поминутный Базовый', 14.50, 4.50, 0, TRUE),
 ('Фикс Город', 16.00, 5.00, 20, TRUE),
 ('Суточный 100 км', 8.00, 2.00, 100, TRUE),
-('Архивный Промо', 10.00, 3.00, 0, FALSE);
+('Промо', 10.00, 3.00, 0, FALSE);
 
 INSERT INTO rides (user_id, car_id, tariff_id, started_at, ended_at, start_odometer, end_odometer, total_cost, status) VALUES
 (1, 1, 1, '2026-10-10 09:00:00+03', '2026-10-10 09:40:00+03', 45175, 45200, 580.00, 'completed'),
@@ -34,4 +34,4 @@ INSERT INTO rides (user_id, car_id, tariff_id, started_at, ended_at, start_odome
 INSERT INTO fines (ride_id, resolution_number, violation_type, amount, issued_at, is_paid) VALUES
 (1, '18810177261010000001', 'Превышение скорости на 20-40 км/ч', 500.00, '2026-10-11 10:00:00+03', TRUE),
 (3, '18810177261014000002', 'Неоплаченная городская парковка', 5000.00, '2026-10-14 16:30:00+03', FALSE),
-(3, 'INTERNAL-2026-0042', 'Завершение аренды вне разрешенной зоны', 1000.00, '2026-10-14 13:00:00+03', FALSE);
+(3, '18810177261014000003', 'Завершение аренды вне разрешенной зоны', 1000.00, '2026-10-14 13:00:00+03', FALSE);
